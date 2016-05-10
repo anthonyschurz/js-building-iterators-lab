@@ -12,22 +12,33 @@ var numArray = [0,1,10,100,1000];
 
 /* myEach */
 
-//
-// myEach(numArray, function print(element, index, arr) {
-//   console.log('inside myEach', element, index, arr);
-// });
-
-
-
+function myEach(arr, callback) {
+  console.log('myEach');
+  for (var i=0; i < arr.length; i++) {
+    callback(arr[i], i, arr);
+  }
+}
 
 /* myMap */
 
-// var input = ["a","b","c"];
-// var output = myMap(input, function capitalize(v){
-//     return v.toUpperCase();
-// });
-// console.log('Testing myMap')
-// console.log(output === ["A", "B", "C"]) // assertion
 
+function myMap(arr, callback) {
+  var outputArray = [];
+  for (var i=0; i<arr.length; i++) {
+    outputArray.push(callback(arr[i], i, arr));
+  }
+  return outputArray;
+}
+
+/* myReduce */
+
+function myReduce(arr, callback) {
+  previousValue = arr[0];
+
+  for(var i=1; i< arr.length; i++) {
+    previousValue = callback(previousValue, arr[i], i, arr);
+  }
+  return previousValue;
+}
 
 console.log("the end");

@@ -2,9 +2,11 @@
 // Don't worry about initialValue at first. You can always add it in later.
 
 function myReduce(arr, callback) {
-
-//  CODE INSIDE HERE   //
-
+  previousValue = arr[0];
+  for(var i=1; i< arr.length; i++) {
+    previousValue = callback(previousValue, arr[i], i, arr);
+  }
+  return previousValue;
 }
 
 /*

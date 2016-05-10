@@ -5,14 +5,14 @@
 
 /* basic solution without providing an initialValue */
 
-// function myReduce(arr, callback) {
-//   previousValue = arr[0];
-//
-//   for(var i=1; i< arr.length; i++) {
-//     previousValue = callback(previousValue, arr[i], i, arr);
-//   }
-//   return previousValue;
-// }
+function myReduce(arr, callback) {
+  previousValue = arr[0];
+
+  for(var i=1; i< arr.length; i++) {
+    previousValue = callback(previousValue, arr[i], i, arr);
+  }
+  return previousValue;
+}
 
 
 
